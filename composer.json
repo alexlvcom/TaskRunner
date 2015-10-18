@@ -1,0 +1,56 @@
+{
+  "name": "alexlvcom/taskrunner",
+  "description": "Task Runner - - command line task runner.",
+  "keywords": [
+    "php",
+    "task",
+    "runner",
+    "command"
+  ],
+  "authors": [
+    {
+      "name": "AlexLV",
+      "email": "me@alexlv.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "league/climate": "3.*",
+    "illuminate/validation": "5.1.*",
+    "alexlvcom/servicecontainer": "dev-master",
+    "monolog/monolog": "1.*"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "*",
+    "phpunit/phpunit": "5.0.*",
+    "mockery/mockery": "*",
+    "squizlabs/php_codesniffer": "2.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "vendor/",
+      "alexlvcom\\TaskRunner\\": "src/",
+      "alexlvcom\\TaskRunner\\Tasks\\": "app/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "alexlvcom\\TaskRunner\\Testing\\": "tests/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "alexlvcom/taskrunner",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/alexlvcom/ServiceContainer",
+          "type": "vcs",
+          "reference": "origin/master"
+        }
+      }
+    }
+  ]
+}
