@@ -38,6 +38,11 @@ abstract class Task extends Command
      */
     protected $serviceContainer;
 
+    /**
+     * @var Root directory of the application
+     */
+    protected $docroot;
+
 
     abstract protected function run(CommandContext $context);
 
@@ -153,7 +158,7 @@ abstract class Task extends Command
     }
 
     /**
-     * @param \alexlvcom\TaskRunner\ServiceContainer $serviceContainer
+     * @param \alexlvcom\ServiceContainer\Container $serviceContainer
      */
     public function setServiceContainer(ServiceContainer $serviceContainer)
     {
@@ -174,5 +179,21 @@ abstract class Task extends Command
     public function setClimate($climate)
     {
         $this->climate = $climate;
+    }
+
+    /**
+     * @return string root directory
+     */
+    public function getDocroot()
+    {
+        return $this->docroot;
+    }
+
+    /**
+     * @param string $docroot
+     */
+    public function setDocroot($docroot)
+    {
+        $this->docroot = $docroot;
     }
 }
