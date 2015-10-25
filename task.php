@@ -67,7 +67,7 @@ $className = 'alexlvcom\TaskRunner\Tasks\\'.$climate->arguments->get('name');
 if (class_exists($className)) {
     $task = $container->make($className);
     $task->setServiceContainer($container);
-    $task->setDocroot(DOCROOT);
+    $task->setDocroot(ROOTPATH);
     $task->setClimate(new \alexlvcom\TaskRunner\Helpers\Climate());
     $task->setLogPath(TASK_LOG_PATH);
 
