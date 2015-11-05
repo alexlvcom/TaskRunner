@@ -62,7 +62,14 @@ if ($climate->arguments->defined('name') === false || $climate->arguments->get('
 
 $time_start = microtime(true);
 
-$className = 'alexlvcom\TaskRunner\Tasks\\'.$climate->arguments->get('name');
+
+$taskName = $climate->arguments->get('name');
+
+if (substr($taskName, 0, 1) === '\\') {  // Absolute namespace provided
+    $className = substr($taskName, 1);
+} else { // relative path goes with prepended alexlvcom\TaskRunner\Tasks namespace
+    $className = 'alexlvcom\TaskRunner\Tasks\\'.$climate->arguments->get('name');
+}
 
 if (class_exists($className)) {
     $task = $container->make($className);
